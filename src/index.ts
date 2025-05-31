@@ -10,35 +10,24 @@ const server = new McpServer({
   version: pkg.version,
 });
 
-server.tool("notify-prompt", { message: z.string() }, async ({ message }) => {
-  console.log(`notify prompt: ${message}`);
+server.tool(
+  "notify-process-finished",
+  "Sends a desktop notification to inform the user that a task or process has completed. This tool MUST be called when finishing any work session.",
+  {
+    summary: z.string().describe("Brief description of the completed work"),
+  },
+  async ({ summary }) => {
+    notifier.notify({
+      title: "Claude Code Finished",
+      message: summary,
+      sound: "Glass",
+    });
 
-  notifier.notify({
-    title: "Claude Code Bell (1)",
-    message,
-    sound: true,
-    wait: true,
-  });
-
-  return {
-    content: [],
-  };
-});
-
-server.tool("notify-finish", { message: z.string() }, async ({ message }) => {
-  console.log(`notify finish: ${message}`);
-
-  notifier.notify({
-    title: "Claude Code Bell (2)",
-    message,
-    sound: true,
-    wait: true,
-  });
-
-  return {
-    content: [],
-  };
-});
+    return {
+      content: [{ type: "text", text: `Notification sent: ${summary}` }],
+    };
+  },
+);
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
