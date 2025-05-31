@@ -3,6 +3,9 @@
     "@tsconfig/node24/tsconfig.json",
     "@tsconfig/node-ts/tsconfig.json"
   ],
+  "compilerOptions": {
+    "resolveJsonModule": true
+  },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
