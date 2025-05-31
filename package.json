@@ -1,0 +1,17 @@
+{
+  "name": "@simochee/claude-code-bell",
+  "version": "0.1.0",
+  "description": "Notification for Claude Code user prompts",
+  "scripts": {
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/node24": "^24.0.1",
+    "@types/node": "^22.15.29",
+    "tsx": "^4.19.4"
+  }
+}
