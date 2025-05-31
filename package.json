@@ -19,12 +19,12 @@
     "url": "https://simochee.net"
   },
   "type": "module",
-  "bin": "./dist/index.mjs",
+  "bin": "./dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm --out-dir dist --clean --dts",
+    "build": "tsup src/index.ts --format esm --out-dir dist --clean",
     "dev": "tsx src/index.ts",
     "postinstall": "lefthook install"
   },
