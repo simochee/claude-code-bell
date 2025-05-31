@@ -11,6 +11,9 @@ importers:
       '@modelcontextprotocol/sdk':
         specifier: ^1.12.1
         version: 1.12.1
+      zod:
+        specifier: ^3.25.42
+        version: 3.25.42
     devDependencies:
       '@tsconfig/node-ts':
         specifier: ^23.6.1
