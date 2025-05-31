@@ -1,0 +1,34 @@
+{
+  "name": "@simochee/claude-code-bell",
+  "version": "0.1.0",
+  "description": "Notification for Claude Code user prompts",
+  "type": "module",
+  "bin": "./dist/index.mjs",
+  "files": ["dist"],
+  "keywords": ["claude", "model-context-protocol", "mcp", "notification"],
+  "license": "MIT",
+  "author": {
+    "name": "simochee",
+    "email": "lollipop@simochee.net",
+    "url": "https://simochee.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simochee/claude-code-bell.git"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsup src/index.ts --format esm --out-dir dist --clean --dts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/node24": "^24.0.1",
+    "@types/node": "^22.15.29",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
